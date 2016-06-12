@@ -71,11 +71,11 @@ var printQuote = function() {
 	quoteString += "</p>";
 	
 	// print the results to the quote-box
-	document.getElementsByTagName("body")[0].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")"
+	document.getElementsByTagName("body")[0].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
 	document.getElementById("quote-box").innerHTML = quoteString;
 };
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-window.setInterval(printQuote, 10000)
+window.setInterval(printQuote, 10000);
 
 

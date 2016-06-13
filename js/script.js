@@ -1,4 +1,5 @@
 // create the quote constructor responsible for creating all quote objects
+
 var quote = function(quote, source, citation, year, tags) {
 	this.quote = quote;
 	this.source = source;
@@ -29,27 +30,25 @@ var getRandomQuote = function (arr) {
 	if (log.length === arr.length) {
 		log = [];
 		// set the choice back to its default value of 0
-		choice = 0;
-	} else {
-		// iterate through the log entries to see if the choice number has already been used, if it has, create a new random number and call the function again
-		for (var i = 0; i < log.length; i++) {
-			if (log[i] === choice) {
-				choice = Math.floor(Math.random() * arr.length);
-				return getRandomQuote(quotesArray);
+		choice = randomNumber(arr.length);
+	}
+	// iterate through the log entries to see if the choice number has already been used, if it has, create a new random number and call the function again
+	for (var i = 0; i < log.length; i++) {
+		if (log[i] === choice) {
+			choice = randomNumber(arr.length);
+			return getRandomQuote(arr);
 			}
 		}
-	}
 	// if the choice is unique, this block will then execute thereby supplying an object to the calling function
 	log.push(choice);
 	return arr[choice];
-	
 };
 
 var printQuote = function() {
 	// create values ranging from 0 to 255 with a random number generating algorithm. one for red, green, and blue
-	var r = Math.floor(Math.random() * 255);
-	var g = Math.floor(Math.random() * 255);
-	var b = Math.floor(Math.random() * 255);
+	var r = randomNumber(255);
+	var g = randomNumber(255);
+	var b = randomNumber(255);
 	
 	// create a local variable named quote, and store the result of getRandomQuote inside of it
 	var quote = getRandomQuote(quotesArray);
@@ -75,6 +74,7 @@ var printQuote = function() {
 	document.getElementById("quote-box").innerHTML = quoteString;
 };
 
+printQuote();
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 window.setInterval(printQuote, 10000);
 

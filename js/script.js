@@ -34,7 +34,7 @@ var getRandomQuote = function (arr) {
 	// check to see if the length of the choice log is equal to that of the array length. if it is, then I know that I need to clear the log and start over 
 	if (log.length === arr.length) {
 		log = [];
-		// set the choice back to its default value of 0
+		// set the choice back to a random default value
 		choice = randomNumber(arr.length);
 	}
 	// iterate through the log entries to see if the choice number has already been used, if it has, create a new random number and call the function again

@@ -22,7 +22,7 @@ var quotesArray = [loisMcMaster, williamShakespeare, lesMiserables, davidAllen, 
 // random numbers are used quite a bit in this small program, so i created a random number generator. using the 'lim' parameter, you can define the 'limit' of the random number
 var randomNumber = function(lim) {
 	return Math.floor(Math.random() * lim);
-}
+};
 
 
 // create the variables that will be utilized by getRandomQuote. log will be used to store a log of entries, while choice is used to store the choice number
